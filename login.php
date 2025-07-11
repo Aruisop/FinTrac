@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $login = $_POST["login"]; // Can be username or email
     $password = $_POST["password"];
 
-    // ✅ Check if login is an email or username
+    // Check if login is an email or username
     if (filter_var($login, FILTER_VALIDATE_EMAIL)) {
         $stmt = $conn->prepare("SELECT id, username, password FROM users WHERE email = ?");
     } else {
