@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
     $password = password_hash($_POST["password"], PASSWORD_BCRYPT);
 
-    // ✅ Check if email already exists
+    // Check if the email already exists
     $stmt = $conn->prepare("SELECT id FROM users WHERE email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($stmt->num_rows > 0) {
         $error = "Email is already registered. Please use another email.";
     } else {
-        // ✅ Insert only if email doesn't exist
+        // Insert only if the email doesn't exist
         $stmt = $conn->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
         $stmt->bind_param("sss", $username, $email, $password);
         if ($stmt->execute()) {
@@ -68,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
 
-<div class="header">FinTrac</div> <!-- Header is now properly centered above signup -->
+<div class="header">FinTrac</div> <!-- The header is now properly centered above signup form -->
 
 <div class="signup-container">
     <h2 class="text-center">Sign Up</h2>
