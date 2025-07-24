@@ -15,6 +15,9 @@ A very robust and clean application, would love to see requests for future featu
 - Session management to ensure security.
 
 ## Tech Stack
+
+<img width="602" height="439" alt="image" src="https://github.com/user-attachments/assets/14fb23e5-5687-4805-ae59-775975c7dc90" />
+
 So we used the following frameworks and languages:
 - Backend : PHP
 - Frontend : Javascript and HTML
